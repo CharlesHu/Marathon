@@ -1,0 +1,22 @@
+{
+  "name": "Content Script Cross-Domain XMLHttpRequest Example",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "Demonstrates making cross domain requests from a content script by putting Twitter trends on Google News.",
+  "permissions": [
+    "http://www.baidu.com/*",
+    "https://jam4.sapjam.com/*",
+    "http://*.qiushibaike.com/*"
+  ],
+  "icons": {
+    "48" : "sample-48.png",
+    "128" : "sample-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.baidu.com/*", "https://jam4.sapjam.com/groups/wall/*"],
+      "js" : ["contentscript.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
